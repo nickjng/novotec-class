@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media do aluno</title>
+</head>
+
+<body style="text-align: center;">
+
+    <h1>Aprovado ou reprovado</h1>
+    <span>1° Nota</span> <br>
+    <input id="nota_1" placeholder="Digite a 1° do aluno"> <br>
+
+    <span>2° Nota</span> <br>
+    <input id="nota_2" placeholder="Digite a 2° do aluno"> <br>
+
+    <span>3° Nota</span> <br>
+    <input id="nota_3" placeholder="Digite a 3° do aluno"> <br>
+
+    <span>4° Nota</span> <br>
+    <input id="nota_4" placeholder="Digite a 4° do aluno"> <br>
+    <br>
+    <button onclick="calcular()">Calcular Media</button>
+    <div id="div_resultado"></div>
+
+</body>
+
+</html>
+<script>
+    function calcular() {
+        let n1 = Number(nota_1.value);
+        let n2 = Number(nota_2.value);
+        let n3 = Number(nota_3.value);
+        let n4 = Number(nota_4.value);
+
+        let soma = n1+n2+n3+n4
+        let media = soma/4
+
+        if(media < 6){
+            div_resultado.innerHTML = `
+            <h3 style="color: red;">Sua media foi ${media}, Então foi Reprovado</h3>
+            `
+            alert("Poxa que pena, tente de novo proximo ano")
+        }else if(media >= 6){
+            div_resultado.innerHTML = `
+            <h3 style="color: green;">Sua media foi ${media}, Então foi Aprovado</h3>
+            `
+            alert("Parabens!!!, Você passou")
+        }
+
+
+
+
+
+
+
+
+    }
+</script>

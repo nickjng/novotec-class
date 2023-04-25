@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <div id="div_bbb">
+        <h1>Participantes do BBB</h1>
+
+        <span>1° Participante</span> <br>
+        <input id="id_participante1" placeholder="Digite o 1° participante"> <br>
+
+        <span>2° Participante</span> <br>
+        <input id="id_participante2" placeholder="Digite o 2° participante"> <br>
+
+        <span>3° Participante</span> <br>
+        <input id="id_participante3" placeholder="Digite o 3° participante"> <br>
+        <br>
+        <span>Clique no botão para voltar em quem vai pro paredão</span> <br>
+        <button onclick="irParedao()">PAREDÃO</button>
+    </div>
+</body>
+
+</html>
+<script>
+    let p1 = ''
+    let p2 = ''
+    let p3 = ''
+    function irParedao() {
+        p1 = id_participante1.value
+        p2 = id_participante2.value
+        p3 = id_participante3.value
+
+        div_bbb.innerHTML = `
+        <h1>VOTO do Paredão</h1>
+
+        <span>${p1}</span> <br>
+        <input id="id_votosP1" placeholder="Digite a quantidade de votos  ${p1}" > <br>
+
+        <span>${p2}</span> <br>
+        <input id="id_votosP2" placeholder="Digite a quantidade de votos  ${p2}" > <br>
+
+        <span>${p3}</span> <br>
+        <input id="id_votosP3" placeholder="Digite a quantidade de votos ${p3}" > <br>
+        <br>
+        <button onclick="votarParedao()">Votar</button>
+        `
+    }
+    function votarParedao() {
+        let qtd_vp1 = Number(id_votosP1.value)
+        let qtd_vp2 = Number(id_votosP2.value)
+        let qtd_vp3 = Number(id_votosP3.value)
+
+        if (qtd_vp1 > qtd_vp2 && qtd_vp1 > qtd_vp3) {
+            alert(`Participante ${p1}, você teve ${qtd_vp1} de votos, por conta disso você está no paredão`)
+        } else if (qtd_vp2 > qtd_vp1 && qtd_vp2 > qtd_vp3) {
+            alert(`Participante ${p2}, você teve ${qtd_vp2} de votos, por conta disso você está no paredão`)
+        } else if (qtd_vp3 > qtd_vp1 && qtd_vp3 > qtd_vp2) {
+            alert(`Participante ${p3}, você teve ${qtd_vp3} de votos, por conta disso você está no paredão`)
+        }
+    }
+
+
+</script>
