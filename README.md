@@ -34,7 +34,7 @@ git clone https://github.com/nickjng/novotec-class.git
 #### ㅤㅤㅤㅤ
 #### ㅤㅤㅤㅤ
 #### ㅤㅤㅤㅤ
-### **ㅤㅤㅤ⬅️ Clique no GIF para ser redirecionado**
+###### **ㅤㅤㅤ⬅️ Clique no GIF para ser redirecionado**
 
  
 
