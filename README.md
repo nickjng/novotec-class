@@ -11,7 +11,6 @@ Nesse repositorio vamos guardar nossos codigos e desafios que produzimos em sala
 
 ## <img width="45" alt="about" src="https://raw.github.com/elizarov/elizarov/master/about.png"> Como clonar esse repositorio? 
 
-<img align="right" width="300" src="https://i2.wp.com/allhtaccess.info/wp-content/uploads/2018/03/programming.gif?fit=1281%2C716&ssl=1" />
 
 ```git
 git clone https://github.com/nickjng/novotec-class.git
