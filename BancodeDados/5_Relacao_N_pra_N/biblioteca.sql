@@ -1,3 +1,7 @@
+ 
+ create database Biblioteca;
+ use Biblioteca;
+ 
  create table livro (
     id_livro int primary key auto_increment,
     titulo varchar(100)
