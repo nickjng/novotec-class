@@ -1,0 +1,32 @@
+Modulos no node.js, são codigos já feitos, onde esse codigo sera importado para o nosso projeto codigo principal (index.js)
+
+
+Os modulos externos são modulos onde precisamos primeiramente instalalos na maquina e assim poder usar, existem muitos tipos de modulos externos,
+pois os modulos internos são desenvolvidos pela comunidade, empressas e pessoas criam seus modulos e compartilham esses modulos com a comunidade que desenvolve. 
+
+Para acessar e poder esses modulos, é só acessar o site do npm https://www.npmjs.com/. onde é possivel encontrar um modulo e ler a sua documentação
+
+
+No exemplo deste arquivo index.js, utilizamos o chalk, onde ele faz alteração na forma que o console aparece. 
+
+Mas antes de usarmos devemos instalar desta maneira: 
+
+
+npm init -y -> iniciar o projeto node
+
+
+npm install chalk -> instalar o chalk
+
+
+const chalk = requerie("chalk")
+
+
+
+
+////////////////////////////////////// A V I S O //////////////////////////////////////////////////
+Há mais de uma maneira para importar modulos alem do chalk, podemos utilizar o import from, onde é uma maneira mais simplificada para importar um modulo.
+O import é muito mais utilizando no React.js, porem podemos utilizalo ele no node também. 
+Alguns modulos inclussive o chalk não dão mais suporte ao require(""), para importar alguns modulos será preciso usar o import from
+ex: 
+
+import chalk from "chalk";

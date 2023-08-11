@@ -1,0 +1,19 @@
+Modulos no node.js, são codigos já feitos, onde esse codigo sera importado para o nosso projeto codigo principal (index.js)
+
+Os Core modulos são modulos já construidos pelo node, ou seja, são nativos do node, não precisamos criar e nem instalar eles
+A unica coisa que vamos precisar fazer é importar ele para o arquivo principal (index.js utilizando o require("nome do modulo"))
+
+
+Alguns exemplos de cores modules são: 
+
+
+fs => ele tem funções que mexem com o sistema de arquivos do seu computador, ele pode: criar arquivos, ler aquivos, mover, deletar e executar
+
+
+path => ele acessa e le informações de aquivos, e diretorios, como exemplo: ele dizer qual o tipo do arquivo, puxar o caminho para chegar no arquivo. etc
+
+const notas = '/users/joe/notes.txt';
+
+path.dirname(notas); // /users/joe
+path.basename(notas); // notes.txt
+path.extname(notas); // .txt

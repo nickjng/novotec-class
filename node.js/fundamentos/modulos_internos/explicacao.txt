@@ -1,0 +1,24 @@
+Modulos no node.js, são codigos já feitos, onde esse codigo sera importado para o nosso projeto codigo principal (index.js)
+
+Os modulos internos são modulos que nós mesmos desenvolvemos, como exemplo: 
+
+
+Foi criado o modulo operações, onde dentro dele eu tenho funções de operações matematicas: soma, subtração, multiplicação e divisão 
+
+e para tranformar esses funções em um modulo, eu uso module.exports, que no caso é onde eu vou exportar as minhas funções para ele ser importada em outro arquivo.
+
+
+Para importar, eu utilizo require("./nomearquivo"). 
+
+
+
+Para executar o sistema então, entre no terminal entre dentro da pasta onde está o seu arquivo executavel (index.js)
+neste caso é novotec-class/node.js/fundamentos/modulos_internos
+e digite node index.js 
+
+resultado: 
+
+Soma: 80 + 23 = 103
+Subtração: 80 - 23 = 57
+Multiplicação: 80 X 23 = 1840
+Divisão: 80 / 23 = 3.4782608695652173
