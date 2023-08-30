@@ -1,5 +1,10 @@
 <h1>Miau</h1>
 
-<h3>Nome do gato/a é {{gato.nome}}</h3>
-<h4>Tem {{gato.idade}} anos de idade</h4>
-<h4>seu dono é o/a {{gato.dono}}</h4>
+<ul>
+
+    {{#each gatos}}
+
+    <li>nome: {{this.nome}} / idade: {{this.idade}} / dono: {{this.dono}} </li>
+
+    {{/each}}
+</ul>
