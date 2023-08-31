@@ -1,14 +1,18 @@
-const express = require('express')
-const exphbs = require('express-handlebars')
-const port = 3000;
+const express = require('express') // importando modulo express
+const exphbs = require('express-handlebars') // importando modulo do handlebars
+const port = 3000; // definindo porta
 
-const app = express()
+const app = express() 
 
-app.engine('handlebars', exphbs.engine())
+const hbs = exphbs.create({
+    partialsDir: ['views/partials'] // --> Uso do Partials 
+})
 
-app.use(express.static('public'))
-
+app.engine('handlebars', hbs.engine) 
 app.set('view engine', 'handlebars')
+
+app.use(express.static('public')) // renderizar css
+
 
 app.get('/', (req, res) => {
 
