@@ -3,7 +3,6 @@ const port = 3000;
 const exphbs = require('express-handlebars') // importando modulo handlebars
 const app = express();
 const mysql  = require('mysql')
-
 const musicas = require('./musicas') // importando modulo interno musicas
 
 //BODY
@@ -90,6 +89,22 @@ app.get('/musicas/:id', (req, res) => {
     res.render("musica", {choicedMusic: musicaSelecionada});
 })
 
+const conn = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "bancodedados",
+    database: "aulanode"
+})
+
+conn.connect((err)=>{
+    if(err){
+        console.log("deu ruim");
+        console.log(err);
+    }
+    else{
+        console.log("Conectado ao Banco de dados");
+    }
+})
 
 app.use( (req, res) => {
     res.status(404).render("404");
