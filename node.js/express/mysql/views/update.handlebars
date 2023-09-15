@@ -1,0 +1,15 @@
+<h1>Editar Usuario</h1>
+<div style="margin-left: 35%;">
+
+    <form class="form_cadastro" action="/musicas/atualizar/{{choicedMusic.id}}" method="post">
+        <span>Nome da Musica</span> <br>
+        <input placeholder="Digite o nome da musica" name="nome" value="{{choicedMusic.nome}}"> <br>
+
+        <span>Artista</span> <br>
+        <input placeholder="Digite o nome do artista" name="artista" value="{{choicedMusic.artista}}"> <br>
+
+        <span>Tipo/Estilo</span> <br>
+        <input placeholder="Digite o tipo da musica" name="tipo" value="{{choicedMusic.tipo}}"> <br>
+        <input class="btn_cadastrar_home" type="submit" value="Atualizar"></input>
+    </form>
+</div>

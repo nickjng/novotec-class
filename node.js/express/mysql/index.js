@@ -31,62 +31,25 @@ app.use(express.static('public'))
 // utilizar rotas/caminhos do modulo musicas
 app.use("/musicas", musicas);
 
-// vetor de musicas
-const songs = [
-    {
-        id: 1,
-        nome: "When You're Gone",
-        artista: "Avril Lavigne",
-        tipo: "Rock"
-    }, 
-    {
-
-        id:2,
-        nome: "Demons",
-        artista: "Imagine Dragons",
-        tipo: "Rock"
-    },
-    {
-        id:3,
-        nome: "is This Love",
-        artista: "Bob Marley",
-        tipo: "Reggae"
-    },
-    {
-        id:4,
-        nome: "Runaway",
-        artista: "AURORA",
-        tipo: "Indie"
-    },
-    {
-        id:5,
-        nome: "Master of Puppets",
-        artista: "Metalica",
-        tipo: "Rock"
-    },
-    {
-        id:6,
-        nome: "How you like that",
-        artista: "BLACKPINK",
-        tipo: "Kpop"
-    },
-    {
-        id:7,
-        nome: "Crawling",
-        artista: "Linkin Park",
-        tipo: "Rock"
-    }
-
-]
-
 app.get('/', (req, res) =>{
-    res.render('home', {songs})
+
+    const sql = 'select * from musica'
+
+    conn.query(sql, (err, data)=>{
+        err? console.log(err) : res.render('home', {songs: data}) 
+    })
+
 })
 
 app.get('/musicas/:id', (req, res) => {
-    const musicaSelecionada = songs[parseInt(req.params.id) - 1];
+    const id = req.params.id;
+    const sql = `select * from musica where id = ${id}`
 
-    res.render("musica", {choicedMusic: musicaSelecionada});
+    conn.query(sql, (err, data)=>{
+        const choicedMusic = data[0]
+        err? console.log(err) : res.render('musica', {choicedMusic}) 
+    })
+
 })
 
 const conn = mysql.createConnection({

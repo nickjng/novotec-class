@@ -1,3 +1,7 @@
 <h1>{{choicedMusic.nome}}</h1>
 <h2>{{choicedMusic.artista}}</h2>
 <h2>{{choicedMusic.tipo}}</h2>
+
+<form action="/musicas/deletar/{{choicedMusic.id}}" method="post">
+<input type="submit" value="Deletar">
+</form>
