@@ -1,25 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const exphbs = require('express-handlebars')
-const mysql = require('mysql')
+const pool = require('../db/conn')
 const app = express();
 
-const conn = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "bancodedados",
-    database: "aulanode"
-})
-
-conn.connect((err) => {
-    if (err) {
-        console.log("deu ruim");
-        console.log(err);
-    }
-    else {
-        console.log("Conectado ao Banco de dados");
-    }
-})
 const hbs = exphbs.create({
     partialsDir: ['views/partials'] // --> Uso do Partials 
 })
@@ -38,11 +22,13 @@ router.post("/salvar", (req, res) => {
     const artista = req.body.artista
     const tipo = req.body.tipo;
 
-    const sql = `insert into musica (nome, artista, tipo)
-                values ('${nome}','${artista}','${tipo}');`
+    const sql = `insert into musica (??, ??, ??)
+                values (?,?,?);`
+
+    const data = ['nome', nome, 'artista', artista, 'tipo', tipo]
 
 
-    conn.query(sql)
+    pool.query(sql, data)
 
 
     res.redirect('/')
@@ -51,9 +37,9 @@ router.post("/salvar", (req, res) => {
 
 router.post('/deletar/:id', (req, res) => {
     const id = req.params.id;
-    const sql = `delete from musica where id = ${id}`
-
-    conn.query(sql)
+    const sql = `delete from musica where ?? = ?`
+    const data = ['id', id]
+    pool.query(sql, data)
 
     res.redirect('/')
 })
@@ -61,9 +47,9 @@ router.post('/deletar/:id', (req, res) => {
 
 router.get('/atualizacao/:id', (req, res) => {
     const id = req.params.id;
-    const sql = `select * from musica where id = ${id}`
-
-    conn.query(sql, (err, data) => {
+    const sql = `select * from musica where ?? = ?`
+    const data = ['id', id]
+    pool.query(sql, data, (err, data) => {
         const choicedMusic = data[0]
         err? console.log(err) : res.render('update', {choicedMusic})
     })
@@ -75,10 +61,12 @@ router.post('/atualizar/:id', (req, res) => {
     const artista = req.body.artista;
     const tipo = req.body.tipo;
 
-    const sql = `update musica set nome = '${nome}', artista = '${artista}',
-                 tipo = '${tipo}' where id = ${id};`
+    const sql = `update musica set ?? = ?, ?? = ?,
+                 ?? = ? where ?? = ?;`
 
-     conn.query(sql, (err)=>{
+    const data = ['nome', nome,'artista', artista, 'tipo', tipo, 'id', id]
+
+     pool.query(sql, data, (err)=>{
         err? console.log(err) : res.redirect('/'); 
      })
 

@@ -2,7 +2,7 @@ const express = require('express'); // importando modulo express
 const port = 3000;
 const exphbs = require('express-handlebars') // importando modulo handlebars
 const app = express();
-const mysql  = require('mysql')
+const pool = require('./db/conn')
 const musicas = require('./musicas') // importando modulo interno musicas
 
 //BODY
@@ -35,7 +35,7 @@ app.get('/', (req, res) =>{
 
     const sql = 'select * from musica'
 
-    conn.query(sql, (err, data)=>{
+    pool.query(sql, (err, data)=>{
         err? console.log(err) : res.render('home', {songs: data}) 
     })
 
@@ -45,28 +45,11 @@ app.get('/musicas/:id', (req, res) => {
     const id = req.params.id;
     const sql = `select * from musica where id = ${id}`
 
-    conn.query(sql, (err, data)=>{
+    pool.query(sql, (err, data)=>{
         const choicedMusic = data[0]
         err? console.log(err) : res.render('musica', {choicedMusic}) 
     })
 
-})
-
-const conn = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "bancodedados",
-    database: "aulanode"
-})
-
-conn.connect((err)=>{
-    if(err){
-        console.log("deu ruim");
-        console.log(err);
-    }
-    else{
-        console.log("Conectado ao Banco de dados");
-    }
 })
 
 app.use( (req, res) => {
