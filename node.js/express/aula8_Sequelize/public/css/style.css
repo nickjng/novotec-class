@@ -1,23 +1,25 @@
 body{
     margin: 0;
-    background-color: #0f0f0f;
-    color: white;
+    background-color: #ffffff;
+    color: black;
 }
 
 header{
     margin: 0;
     width: 100%;
-    background-color: rgb(5, 145, 16);
+    background-color: rgb(9, 110, 177);
     height: 80px;
 }
 
 .btn_cadastrar_home{
-    background-color: rgb(5, 145, 16);
-    float: right;
-    margin-top: 9%;
-    margin-right: 6%;
-    width: 200px;
-    height: 35px;
+    background-color: rgb(9, 110, 177);
+    font-size: 50px;
+    right: 70px;
+    bottom: 20px;
+    z-index: 100px;
+    position: fixed;
+    width: 84px;
+    height: 84px;
     text-decoration: none;
     display: grid;
     text-align: center;
@@ -26,7 +28,7 @@ header{
 }
 
 .btn_cadastrar_home:hover{
-    box-shadow: 4px 4px 4px 2px #615757b6 ;
+    box-shadow: 20px 20px 10px solid black ;
     cursor: pointer;
     background-color: rgb(9, 226, 27);
 }
@@ -48,7 +50,7 @@ header a{
 
 .container_musics{
     display: flex;
-    margin-top: 15%;
+    margin-top: 5%;
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
@@ -62,7 +64,7 @@ header a{
     height: 120px;
     margin-left: 5% ;
     margin-right: 5%;
-    background-color: rgba(31, 31, 31, 0.726);
+    background-color: rgba(9, 110, 177, 0.637);
     border-radius: 3%;
     cursor: pointer;
     padding-left: 1%;
