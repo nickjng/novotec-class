@@ -1,19 +1,21 @@
-<h1>Home</h1>
+
 
 <div class="btn_cadastrar_home">
-    <a href="/musicas/cadastrar">+</a>
+    <a href="/users/create">+</a>
 </div>
 
 
-{{#if canditados}}
-<h1>Há canditatods
-    
-</h1>
+{{#if candidatos}}
+<div class="container_cands">
+    {{#each candidatos}}
+    {{> cands}}
+    {{/each}}
+</div>
 {{else}}
 <div style="text-align: center;">
-    <h1>Não há canditados... </h1>
+    <h1>Não há candidatos... </h1>
     <a href="/">
-        <h3>Cadastre usuarios</h3>
+        <h3>Cadastre candidatos</h3>
     </a>
 </div>
 {{/if}}

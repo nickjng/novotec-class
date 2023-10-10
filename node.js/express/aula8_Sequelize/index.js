@@ -2,6 +2,10 @@ const express = require('express');
 const port = 3000;
 const exphbs = require('express-handlebars')
 const app = express();
+const conn = require('./db/conn')
+const User = require('./models/User')
+const Users = require('./Users');
+const { raw } = require('mysql2');
 
 //BODY
 app.use(
@@ -23,9 +27,15 @@ app.set('view engine', 'handlebars')
 //css
 app.use(express.static('public'))
 
-app.get('/', (req, res) =>{
+app.use('/users', Users)
 
-    res.render('home') 
+app.get('/', async (req, res) =>{
+
+    const candidatos = await User.findAll({raw: true})
+
+    console.log(candidatos);
+
+    res.render('home', {candidatos}) 
 
 })
 
@@ -33,6 +43,8 @@ app.use( (req, res) => {
     res.status(404).render("404");
 })
 
-app.listen(port, () =>{
-    console.log("Projeto funcionando, acesse localhost:"+port);
+conn.sync().then(() =>{
+    app.listen(port)
+}).catch((error) =>{
+    console.log('não foi possivel criar uma conexão com o banco de dados');
 })
