@@ -108,3 +108,63 @@ header a{
     border-bottom-style: hidden ;
 }
 
+.user_datas{
+    margin-top: 1%;
+    display: flex;
+    width: 100%;
+    height: 2%;
+    border-bottom-color: rgba(78, 78, 78, 0.486) ;
+    border-bottom-style: solid;
+}
+
+.user_datas img{
+    margin-left: 5%;
+    height: 200px;
+    width: 200px;
+}
+
+.user_datas h2{
+    margin-top: 10%;
+    width: 50%;
+    /* background-color: pink; */
+}
+
+.user_datas .users_btn_atualizar{
+    background-color: rgb(5, 145, 16);
+    float: left;
+    margin-top: 10%;
+    width: 200px;
+    height: 35px;
+    text-decoration: none;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    border-radius: 60px ;
+}
+
+.user_datas .users_btn_remover{
+    background-color: rgb(145, 5, 5);
+    width: 200px;
+    height: 35px;
+    text-decoration: none;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    border-radius: 60px ;
+}
+
+.user_datas form{
+    margin-left: 1%;
+    margin-top: 10%;
+}
+
+
+
+.user_datas .users_btn_remover input{
+    background-color: #d3d3d300;
+    border: none;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+

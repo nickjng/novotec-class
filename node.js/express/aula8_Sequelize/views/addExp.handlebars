@@ -1,0 +1,15 @@
+<h1>Adcione Experiencia: {{user.nome}}</h1>
+<form  class="form_cadastro" action="/exp/create" method="post">
+    <input type="hidden" name="UserId" value="{{user.id}}">
+
+    <label for="cargo">cargo</label> <br> 
+    <input name="cargo" type="text"> <br>
+
+    <label for="empresa">empresa</label> <br> 
+    <input id="empresa" name="empresa" type="text"> <br>
+
+    <label for="salario">salario</label> <br> 
+    <input id="salario" name="salario" type="number"> <br>
+
+    <button type="submit">Adcionar</button>
+</form>

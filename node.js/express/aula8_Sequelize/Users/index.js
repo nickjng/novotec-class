@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
 const User = require('../models/User');
+const Experiencie = require('../models/Experiencie');
 const router = express.Router();
 
 //BODY
@@ -48,6 +49,19 @@ router.post('/create', async (req, res)=>{
 
     res.redirect('/')
 
+})
+
+router.get('/:id', async (req, res) =>{
+    const id = req.params.id;
+
+    try {
+        const user = await User.findOne({include: Experiencie, where: {id : id}})
+    
+        res.render('user', { user: user.get({ plain: true }) })
+        
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 module.exports = router;
