@@ -36,8 +36,29 @@ git clone https://github.com/nickjng/novotec-class.git
 #### ㅤㅤㅤㅤ
 #### **⬆️ Clique no GIF para ser redirecionado**
 
- 
+## **Super dica para usar o Git**
 
+1 Passo - Configurar o git no seu pc
+```git
+git config --global user.name 'o nome do seu perfil do github'
+```
+```git
+git config --global user.email 'email cadastrado no github'
+```
 
+2  Passo - Salvar as alterações que você fez no codigo
+```git
+git add .
+```
+
+3  Passo - Commitar a sua alteração com uma mensagem
+```git
+git commit -m 'sua mensagem'
+```
+
+4 Ultimo Passo - Fazer o push das suas alterações e ficar salvo no git
+```git
+git push
+```
 
 
