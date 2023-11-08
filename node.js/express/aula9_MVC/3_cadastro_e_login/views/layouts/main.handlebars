@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Tasks</title>
+</head>
+
+<body>
+    <header>
+        <h2>Alpes Tasks</h2>
+    </header>
+
+    <div class="lateral-bar">
+        <a href="/user">
+            <img src="/img/girl.png" alt="">
+        </a>
+        <div class="options">
+            <a href="/tasks">Tasks</a>
+            <a href="/tasks/add">Criar Task</a>
+            <form action="/logout" method="post">
+                <button style="background-color: transparent; border:none; cursor: pointer;" 
+                type="submit"><a style="text-decoration: none; list-style: none;">Sair</a></button>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        {{{body}}}
+    </div>
+
+
+</body>
+
+</html>
